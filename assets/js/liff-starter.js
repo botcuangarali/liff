@@ -23,7 +23,7 @@ function initVConsole() {
         defaultPlugins: ["system", "network", "element", "storage"],
         maxLogNumber: 1000,
         onReady: function() {
-            console.log("vConsole is ready.");
+            console.log("Console hazır.");
         },
         onClearLog: function() {
             console.log("on clearLog");
@@ -33,7 +33,7 @@ function initVConsole() {
 
 // Initialize LIFF
 function initLiff() {
-    console.log("going to initialize LIFF");
+    console.log("liff hazır");
     liff.init(
         data => {
             console.log("LIFF initialized!");
@@ -41,11 +41,11 @@ function initLiff() {
             const userId = data.context.userId;
             liff.getProfile().then(profile => {
                 const userDisplayName = profile.displayName
-                console.info("User name is", userDisplayName);
+                console.info("Kullanıcı ismi", userDisplayName);
                 if (getParameterByName("auto") == "yes") {
                     sendLiffMessage();
                 }
-                document.getElementById("greet").innerHTML = "Hi, " + userDisplayName + " ౼ Nice to meet you";
+                document.getElementById("greet").innerHTML = "Selam, " + userDisplayName + " ౼ MEMNUN OLDUM";
             }).catch((err) => {
                 console.error("LIFF getProfile failed", err);
             });
